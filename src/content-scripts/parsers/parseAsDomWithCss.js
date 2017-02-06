@@ -2,7 +2,7 @@
  * Created by vlad.chirkov on 31.1.17.
  */
 
-import {names as cssProps} from './resources/json/commonCssProps.json';
+import {names as cssProps} from '../resources/json/commonCssProps.json';
 
 /**
  * Save all styles, that differ from default

@@ -22,7 +22,15 @@ module.exports = {
             },
             {
                 test: /\.json$/,
-                loader: 'json-loader',
+                loader: 'json-loader'
+            },
+            {
+                test: /\.less$/,
+                loader: 'style!css!less'
+            },
+            {
+                test: /\.svg/,
+                loader: 'svg-url-loader'
             }
         ]
     },

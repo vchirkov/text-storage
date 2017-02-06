@@ -1,18 +1,25 @@
-<div class="topics">
-    <div class="topic"
+<div class="topics filter">
+    <div class="filter-header"
+         ng-bind="'topics_header' | translate">
+    </div>
+    <div class="topic filter-item"
          ng-repeat="topic in $ctrl.topics track by topic.rowid"
-         ng-class="{active: topic.active}"
+         ng-class="{active: topic.active, current: topic.rowid === $ctrl.currentTopic}"
          ng-bind="topic.topic"
          ng-attr-title="{{topic.topic}}"
-         ng-click=" $ctrl.filterSelectionByTopic(topic)">
+         ng-click=" $ctrl.onTopicClick(topic)">
     </div>
 </div>
-<div class="domains">
-    <div class="domain"
+<div class="domains filter">
+    <div class="filter-header"
+         ng-bind="'domains_header' | translate">
+    </div>
+    <div class="domain filter-item"
+         ng-class="{current: domain.rowid === $ctrl.currentDomain}"
          ng-repeat="domain in $ctrl.domains | orderBy: 'domain' track by domain.rowid"
          ng-bind="domain.domain"
          ng-attr-title="{{domain.domain}}"
-         ng-click=" $ctrl.filterSelectionByDomain(domain)">
+         ng-click=" $ctrl.onDomainClick(domain)">
     </div>
 </div>
 <div class="selections-list" ui-view></div>

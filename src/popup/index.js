@@ -13,6 +13,20 @@ import topicList from './topicList';
 import translate from './config/translate';
 import router from './config/router';
 
+/**
+ * Core popup module
+ * @module popup
+ * @dependency {module} [ui-router]
+ * @dependency {module} [angular-translate]
+ * @dependency {module} [angular sanitize]
+ * @dependency {module} [common] - abstractions to communicate with background
+ * @dependency {module} [topicList] - topic list module to manipulate topics
+ *
+ * @config {function} - translate configuration
+ * @config {function} - router configuration
+ *
+ * @run {function} - navigate to Topic List
+ */
 export default angular.module('popup', [uiRouter, angularTranslate, angularSanitize, common, topicList])
 
     .config(translate)

@@ -1,16 +1,19 @@
 /**
  * Created by vlad.chirkov on 3.2.17.
  */
-import _ from 'lodash';
-
-connector.$name = 'connector';
+/**
+ * service to manage topics from background
+ * @param connector {service}
+ * @returns {{get: (function())}}
+ */
+connector.$name = 'topics';
 export default function connector(connector) {
     var topicsPromise = connector('get-topics');
     return {
-        get: (id) => {
-            if (id) {
-                return topicsPromise.then((topics) => _.find({rowid: id}));
-            }
+        /**
+         * @returns {Promise} - resolves t opiclist
+         */
+        get: () => {
             return topicsPromise;
         }
     }

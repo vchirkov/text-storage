@@ -4,26 +4,26 @@
 import angular from 'angular';
 import angularTranslate from 'angular-translate';
 import angularSanitize from 'angular-sanitize';
-import common from '../common';
+import common from '../../common';
 
-import topicListComponent from './topicListComponent'
+import selectionListComponent from './selectionListComponent'
 import translate from './config/translate';
 
 /**
- * @module topicList
+ * component, to display selections. For now handles only  text, but later will display html
+ * @module selectionList
  * @dependency {module} [angular-translate]
  * @dependency {module} [angular sanitize]
  * @dependency {module} [common] - abstractions to communicate with background
  *
- * @component {component} - topic list component
+ * @component {component} - selectionListComponent
  *
  * @config {function} - translate configuration
  *
- * @run {function} - navigate to Topic List
  */
-export default angular.module('topicList', [angularTranslate, angularSanitize, common])
+export default angular.module('selectionList', [angularTranslate, angularSanitize, common])
 
-    .component(topicListComponent.$name, topicListComponent)
+    .component(selectionListComponent.$name, selectionListComponent)
 
     .config(translate)
 

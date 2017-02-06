@@ -23,15 +23,19 @@ module.exports = {
             },
             {
                 test: /\.json$/,
-                loader: 'json-loader',
+                loader: 'json-loader'
             },
             {
-                test: /(\.html|\.svg)$/,
+                test: /\.html$/,
                 loader: 'ngtemplate!html'
             },
             {
                 test: /\.less$/,
                 loader: 'style!css!less'
+            },
+            {
+                test: /\.svg/,
+                loader: 'svg-url-loader'
             },
             {
                 test: /angular(\.min)?\.js$/,

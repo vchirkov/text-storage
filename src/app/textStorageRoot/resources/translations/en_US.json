@@ -1,2 +1,5 @@
 {
+  "topics_header": "Topics",
+  "domains_header": "Domains",
+  "no_selections": "Sorry, but there are no selections for current domain and topic <br> But you can always save some! <br> Set active topic in popup <br> Select text <br> Press <strong>'alt+s'</strong> <br> Voila :)"
 }

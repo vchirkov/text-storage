@@ -1,5 +1,42 @@
 @import "../variables";
 
 text-storage-root {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
 
+  .filter {
+    width: 175px;
+    border-right: 1px solid @secondary-border-color;
+    background-color: @primary-color;
+    color: @primary-font-color;
+    font-size: 14px;
+    flex: 0 0 auto;
+  }
+
+  .filter-header {
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+    cursor: default;
+    border-bottom: 2px solid @secondary-border-color;
+    font-weight: bold;
+  }
+
+  .filter-item {
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+    cursor: pointer;
+
+    &:hover, &.current {
+      background-color: @hover-color;
+      color: @hover-font-color;
+    }
+  }
+
+  .selections-list {
+    min-height: 100vh;
+    flex: 1 1 auto;
+  }
 }

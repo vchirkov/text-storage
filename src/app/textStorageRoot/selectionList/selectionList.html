@@ -1,0 +1,26 @@
+<div class="selections-header"
+     ng-bind="'selections_header' | translate">
+</div>
+<div class="selections"
+     ng-show="$ctrl.selections.length">
+    <div class="selection"
+         ng-repeat="$selection in $ctrl.selections">
+        <a class="meta-info-container"
+           target="_blank"
+           ng-attr-title="{{$selection.url}}"
+           ng-href="{{$selection.url}}">
+            <label class="selection-topic"
+                   ng-bind="$selection.topic"></label>
+            <label class="selection-domain"
+                   ng-bind="$selection.domain"></label>
+        </a>
+        <div class="selection-text">
+            <blockquote ng-bind="$selection.selection"></blockquote>
+        </div>
+    </div>
+</div>
+<div class="sad-stub"
+     ng-hide="$ctrl.selections.length"
+     ng-bind-html="'no_selections' | translate">
+
+</div>
