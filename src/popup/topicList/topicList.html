@@ -1,0 +1,23 @@
+<div class="filter-container">
+    <input class="filter"
+           ng-attr-placeholder="{{'filter_topics' | translate}}"
+           ng-model="$ctrl.topicName">
+    <a class="add-topic"
+       ng-include="$ctrl.addTopicIcon"
+       ng-show="$ctrl.topicName"
+       ng-attr-title="{{'add_topic' | translate}}"
+       ng-click="$ctrl.addTopic($ctrl.topicName)"></a>
+</div>
+<div class="topics-container">
+    <div class="topic"
+         ng-repeat="topic in $ctrl.topics |filter: {$:$ctrl.topicName} |orderBy: '-active' track by topic.rowid "
+         ng-class="{active: topic.active}"
+         ng-bind="topic.topic"
+         ng-attr-title="{{topic.topic}}"
+         ng-click=" $ctrl.setActiveTopic(topic)">
+    </div>
+</div>
+<a class="open-app button-submit"
+   ng-click="$ctrl.openApp()"
+   ng-bind="'open_app' | translate">
+</a>

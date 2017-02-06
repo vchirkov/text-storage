@@ -1,0 +1,18 @@
+<div class="topics">
+    <div class="topic"
+         ng-repeat="topic in $ctrl.topics track by topic.rowid"
+         ng-class="{active: topic.active}"
+         ng-bind="topic.topic"
+         ng-attr-title="{{topic.topic}}"
+         ng-click=" $ctrl.filterSelectionByTopic(topic)">
+    </div>
+</div>
+<div class="domains">
+    <div class="domain"
+         ng-repeat="domain in $ctrl.domains | orderBy: 'domain' track by domain.rowid"
+         ng-bind="domain.domain"
+         ng-attr-title="{{domain.domain}}"
+         ng-click=" $ctrl.filterSelectionByDomain(domain)">
+    </div>
+</div>
+<div class="selections-list" ui-view></div>
